@@ -42,6 +42,11 @@
         follow_redirects: all
       register: rke2_version_url
 
+    - name: Debug full version name
+      ansible.builtin.debug:
+        var: rke2_version_url
+        verbosity: 2
+  
     - name: Set full version name
       shell: set -o pipefail && echo {{ rke2_version_url.url }} | sed -e 's|.*/||'
       register: rke2_full_version
@@ -102,10 +107,10 @@
     recurse: true
   when: tarball_dir is defined
 
-- name: TARBALL | Install tar package
-  package:
-    name: tar
-    state: present
+#- name: TARBALL | Install tar package
+#  package:
+#    name: tar
+#    state: present
 
 - name: TARBALL | Extract the tarball  # noqa command-instead-of-module
   command:

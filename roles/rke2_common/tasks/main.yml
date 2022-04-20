@@ -3,9 +3,9 @@
 - name: Populate service facts
   service_facts: {}
 
-- name: Gather the package facts
-  package_facts:
-    manager: auto
+# - name: Gather the package facts
+#   package_facts:
+#     manager: auto
 
 - name: Has rke2 been installed already
   include_tasks: previous_install.yml
