@@ -12,3 +12,17 @@
 - name: Setup other servers
   include_tasks: other_servers.yml
   when: inventory_hostname in groups['rke2_servers'][1:]
+
+- name: RKE2 agent and server tasks
+  include_role:
+    name: rke2_common
+    tasks_from: main
+
+- name: Add kubectl alias to host
+  become: true
+  lineinfile:
+    dest: "~/.bashrc"
+    create: yes
+    mode: 0755
+    line: 'alias kubectl="/var/lib/rancher/rke2/bin/kubectl --kubeconfig /etc/rancher/rke2/rke2.yaml"'
+    regexp: "^alias kubectl="

@@ -73,3 +73,12 @@
   include_role:
     name: rke2_common
     tasks_from: cis-hardening
+
+- name: Add crictl alias to host
+  become: true
+  lineinfile:
+    dest: "~/.bashrc"
+    create: yes
+    mode: 0755
+    line: 'alias crictl="crictl --runtime-endpoint /var/run/k3s/containerd/containerd.sock"'
+    regexp: "^alias crictl="
