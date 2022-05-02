@@ -10,6 +10,9 @@ rke2_config:
   cni: cilium
   disable-kube-proxy: 
     - false
+  cluster-cidr: 10.2.0.0/16
+  service-cidr: 10.3.0.0/16
+
   #disable-kube-proxy:
   #  - true
   # container-runtime-endpoint: /run/docker/libcontainerd/docker-containerd.sock

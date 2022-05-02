@@ -1,5 +1,11 @@
 ---
 
+- hosts: localhost
+  any_errors_fatal: true
+  run_once: true
+  roles:
+    - role: rke2_download
+
 - hosts: rke2_servers
   any_errors_fatal: true
   become: yes

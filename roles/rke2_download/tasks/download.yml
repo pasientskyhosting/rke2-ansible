@@ -1,0 +1,18 @@
+---
+
+
+
+- debug:
+    msg: "RKE2 Version: {{ rke2_package_version }}"
+
+- name: Download "rke2-images.linux-amd64.tar.zst"
+  delegate_to: localhost
+  get_url:
+    url: https://github.com/rancher/rke2/releases/download/{{ rke2_package_version }}/rke2-images.linux-amd64.tar.zst
+    dest: "{{playbook_dir}}/tarball_install/rke2-images.linux-amd64.tar.zst"
+
+- name: Download "rke2-images.linux-amd64.tar.zst"
+  delegate_to: localhost
+  get_url:
+    url: https://github.com/rancher/rke2/releases/download/{{ rke2_package_version }}/rke2.linux-amd64.tar.gz
+    dest: "{{playbook_dir}}/tarball_install/rke2.linux-amd64.tar.gz"
