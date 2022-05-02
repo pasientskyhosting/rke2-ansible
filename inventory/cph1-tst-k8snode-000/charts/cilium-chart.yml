@@ -10,8 +10,8 @@ spec:
   valuesContent: |-
     operator:
       replicas: 2
-    kubeProxyReplacement: "strict"
-    k8sServiceHost: 10.60.95.91
+    kubeProxyReplacement: "probe"
+    k8sServiceHost: 10.60.95.51
     k8sServicePort: 6443
     hubble:
       enabled: true

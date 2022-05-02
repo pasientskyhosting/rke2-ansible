@@ -6,10 +6,10 @@ rke2_config:
   disable:
     - rke2-ingress-nginx
     - rke2-canal
-    - kube-proxy
+    # - kube-proxy
   cni: cilium
   disable-kube-proxy: 
-    - true
+    - false
   #disable-kube-proxy:
   #  - true
   # container-runtime-endpoint: /run/docker/libcontainerd/docker-containerd.sock
