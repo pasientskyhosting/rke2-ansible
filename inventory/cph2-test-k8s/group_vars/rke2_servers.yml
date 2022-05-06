@@ -1,0 +1,21 @@
+---
+# Primary RKE2 server configuration parameters. Remove the curly braces ( {} ) and add your configuration.
+# See https://docs.rke2.io/install/install_options/server_config/ for all configuration options.
+rke2_config: 
+  selinux: false
+  disable:
+    - rke2-ingress-nginx
+    - rke2-canal
+#    - kube-proxy
+  cni: cilium
+  #tls-san:
+  #  - 10.60.95.20
+
+#  disable-kube-proxy: 
+#    - true
+  #disable-kube-proxy:
+  #  - true
+ # container-runtime-endpoint: /run/docker/libcontainerd/docker-containerd.sock
+
+# containerd_template_file: "{{ playbook_dir }}/inventory/cph1-test-rke2-k8s/containerd.conf"
+manifest_config_file_path: "{{ playbook_dir }}/inventory/cph2-test-k8s/charts/"
