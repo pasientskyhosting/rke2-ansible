@@ -6,6 +6,7 @@ rke2_config:
   disable:
     - rke2-ingress-nginx
     - rke2-canal
+    - rke2-metrics-server
 #    - kube-proxy
   cni: cilium
   tls-san:
